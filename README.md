@@ -36,7 +36,7 @@ between them. In this example,*h=3*, since there are _mismatches_ at positions 2
 3 and 5.
 
 We can use the Hamming distance model for searching a text *y* of length *n>=m*,
-to determing if pattern *x* can be found in it. To perform the search, we move
+to determining if pattern *x* can be found in it. To perform the search, we move
 *x* along *y* one position at a time and compare all characters of *x* and *y*
 at each new position. This naive _moving-window_ approach has quadratic time
 complexity, *O(nm)*, because we compare every character in *x* against the
@@ -98,7 +98,7 @@ each letter we would set the position to 1 in each word. In the end, *P* contain
 
 Initializing the table requires time *O(|A|)=O(|A|[m/w])*, and reading the pattern
 and marking the positions requires *O(m)=O(m.[m/w])* time. We use the *bitwise-OR*
-operation to add 1s to the computer word of each letter. Here is the psuedo-code:
+operation to add 1s to the computer word of each letter. Here is the pseudo-code:
 
 ```
 P <- a list of words of size |A| initialized to 0
@@ -159,8 +159,8 @@ positions that do not match for the current letter as 1.
 We then count the 1s (the mismatching positions) in constant time using the bitwise
 _PopCount_ operation. This value will be added to a mismatch counter *s*. We then
 bitwise _Right-Shift_ (denoted by *>>*) the word in table *T* for that letter,
-shifting all the 1s one pposition to the right, discarding the bit on the end.
-Here is the psuedo-code:
+shifting all the 1s one position to the right, discarding the bit on the end.
+Here is the pseudo-code:
 
 ```
 	s = 0
@@ -172,7 +172,7 @@ Here is the psuedo-code:
 ```
 
 Finally, we check the mismatch counter is within the threshold and report the start
-position for the match and the distance *s*. Here is the psuedo-code:
+position for the match and the distance *s*. Here is the pseudo-code:
 
 ```
 	if s <= k:
@@ -391,6 +391,6 @@ the pattern requires *O(m)* time, searching the text is performed in *O(n)*, lin
 time. The space complexity is *O(|A|)*.
 
 With some clever programming, using specific operations available on some CPU
-architectures, the search stage can be optimised to perform the operations of
+architectures, the search stage can be optimized to perform the operations of
 each alphabet letter simultaneously and sum up the mismatches in fewer operations,
 thus making it even faster than the generalized implementation presented here.
