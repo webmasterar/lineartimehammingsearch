@@ -1,8 +1,8 @@
 # LTHS: Linear Time Hamming Search
 
 LTHS: Linear Time Hamming Search, by Ahmad Retha. This is an algorithm for
-*pattern matching* (string searching) under the *Hamming* distance model with
-*k-mismatches* in *linear time*, assuming a pattern length of less than the size
+*approximate pattern matching* (string searching) under the *Hamming* distance model
+with *k-mismatches* in *linear time*, assuming a pattern length of less than the size
 of one computer word (typically up to 64 characters) and a constant alphabet size.
 I am not aware of an equivalent algorithm, so I am sharing this for the benefit
 of researchers in the fields of Computer Science, Bioinformatics and related fields.
