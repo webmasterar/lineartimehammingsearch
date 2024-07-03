@@ -50,11 +50,11 @@ def initialize_T(A, T, t, m):
         T[j] = T[j] | (1 << i)
 
 
-def popcount(n):
-    """ Returns count of set bits in n
-    n: A number
+def popcount(word):
+    """ Returns count of set bits in a computer word
+    word: A computer word
     """
-    return n.bit_count()
+    return word.bit_count()
 
 
 def search(A, sigma, P, T, t, n, m, k):
